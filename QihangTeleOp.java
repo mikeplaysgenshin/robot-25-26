@@ -1,7 +1,7 @@
 public class QihangTeleOp extends LinearOpMode{
    @Override
 public void runOpMode(){
-      QihangMain QihangDrivetrain = new QihangMain(hardwareMap);
+      QihangMain drivetrain = new QihangMain(hardwareMap);
    waitForStart();
    // Put run blocks here
 
@@ -12,7 +12,7 @@ while (opModeIsActive()) {
       if(gamepad1.x){
       }
       */
-      QihangDrivetrain.setMotorPower(-gamepad1.right_stick_y, gamepad1.right_stick_x,gamepad1.left_stick_x);
+      drivetrain.setMotorPower(-gamepad1.right_stick_y, gamepad1.right_stick_x,gamepad1.left_stick_x);
    if(gamepad1.a){
       intake.setPower(1);
    }
