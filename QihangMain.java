@@ -1,7 +1,7 @@
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-public class QihangMain extends LinearOpMode{
+public class QihangMain{
       DcMotor frontLeft;
       DcMotor frontRight;
       DcMotor backLeft;
