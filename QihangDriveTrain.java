@@ -1,12 +1,17 @@
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-public class QihangMain{
+public class QihangDriveTrain{
       DcMotor frontLeft;
       DcMotor frontRight;
       DcMotor backLeft;
       DcMotor backRight;
-    public QihangMain(HardwareMap hardwareMap) {
+      DcMotor intake;
+      ServoImplEx drumServo;
+      Servo flickServo;
+      Servo lbrake;
+      Servo lbrake
+    public QihangDriveTrain(HardwareMap hardwareMap) {
       frontLeft=hardwareMap.get(DcMotor.class, "fl");
       frontRight=hardwareMap.get(DcMotor.class, "fr");
       backLeft=hardwareMap.get(DcMotor.class, "bl");
@@ -21,7 +26,14 @@ public class QihangMain{
       frontRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
       backLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
       backRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-
+      intakehardwareMap.get(DcMotor.class, "intake");
+      drumServo = hardwareMap.get(ServoImplEx.class, "drumServo");
+      drumServo.setPwmRange(new PwmControl.PwmRange(500, 2500));
+      flickServo = hardwareMap.get(Servo.class, "flick");
+      intakeColorSensor = hardwareMap.get(NormalizedColorSensor.class, "intakeColorSensor");
+      intakeColorSensor.setGain(15);
+      lbrake=hardwareMap.get(Servo.class,"lBrake");
+      rbrake=hardwareMap.get(Servo.class,"rBrake");
    }
 
       public void setMotorPower(double yPower, double xPower, double rPower){
@@ -43,20 +55,6 @@ public enum ballState(){
 public void update(){
    boolean ballDetected = false;
 }
-  @Override
-public void runOpMode(){
-   qihangMain qihangMain = new qihangMain(hardwareMap);
-   waitForStart();
-   // Put run blocks here
 
-while (opModeIsActive()) {
-   // Put loop blocks here
-      /*if(gamepad1.a){
-      }
-      if(gamepad1.x){
-      }
-      */
-      qihangMain.setMotorPower(-gamepad1.right_stick_y, gamepad1.right_stick_x,gamepad1.left_stick_x);
-   }
    }
 }
