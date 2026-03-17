@@ -1,7 +1,7 @@
 public class qihangteleop extends LinearOpMode{
    @Override
 public void runOpMode(){
-      QihangDrivetrain QihangDrivetrain = new QihangDrivetrain(hardwareMap);
+      QihangMain QihangDrivetrain = new QihangDriveMain(hardwareMap);
    waitForStart();
    // Put run blocks here
 
