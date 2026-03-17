@@ -1,6 +1,10 @@
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.hardware.ServoImplEx;
+import com.qualcomm.robotcore.hardware.NormalizedColorSensor;
+import com.qualcomm.robotcore.hardware.PwmControl;
 public class QihangDriveTrain{
       DcMotor frontLeft;
       DcMotor frontRight;
@@ -10,7 +14,7 @@ public class QihangDriveTrain{
       ServoImplEx drumServo;
       Servo flickServo;
       Servo lbrake;
-      Servo lbrake
+      Servo rbrake;
     public QihangDriveTrain(HardwareMap hardwareMap) {
       frontLeft=hardwareMap.get(DcMotor.class, "fl");
       frontRight=hardwareMap.get(DcMotor.class, "fr");
@@ -26,7 +30,7 @@ public class QihangDriveTrain{
       frontRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
       backLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
       backRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-      intakehardwareMap.get(DcMotor.class, "intake");
+      intake=hardwareMap.get(DcMotor.class, "intake");
       drumServo = hardwareMap.get(ServoImplEx.class, "drumServo");
       drumServo.setPwmRange(new PwmControl.PwmRange(500, 2500));
       flickServo = hardwareMap.get(Servo.class, "flick");
