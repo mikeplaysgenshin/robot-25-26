@@ -15,6 +15,7 @@ public class QihangDriveTrain{
       Servo flickServo;
       Servo lbrake;
       Servo rbrake;
+      NormalizedColorSensor intakeColorSensor;
     public QihangDriveTrain(HardwareMap hardwareMap) {
       frontLeft=hardwareMap.get(DcMotor.class, "fl");
       frontRight=hardwareMap.get(DcMotor.class, "fr");
