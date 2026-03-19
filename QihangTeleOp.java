@@ -1,3 +1,4 @@
+@TeleOp
 public class QihangTeleOp extends LinearOpMode{
    @Override
    QihangMain drivetrain;
@@ -15,17 +16,17 @@ while (opModeIsActive()) {
       */
       drivetrain.setMotorPower(-gamepad1.right_stick_y, gamepad1.right_stick_x,gamepad1.left_stick_x);
    if(gamepad1.a){
-      intake.setPower(1);
+      drivetrain.intake.setPower(1);
    }
    else{
-      intake.setPower(0);
+      drivetrain.intake.setPower(0);
       }
    if(gamepad.x){
-      lbrake.setPower(0.4);
-      rbrake.setPower(0.3);
+      drivetrain.lbrake.setPower(0.4);
+      drivetrain.rbrake.setPower(0.3);
    }else{
-      lbrake.setPower(0.6);
-      rbrake.setPower(0.5);
+      drivetrain.lbrake.setPower(0.6);
+      drivetrain.rbrake.setPower(0.5);
    }
    }
 
