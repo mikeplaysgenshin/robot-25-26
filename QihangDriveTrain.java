@@ -53,8 +53,10 @@ public class QihangDriveTrain{
 public void setDrumPostition(double position, double power){
    
 }
-public enum ballState(){
-     Purple, Green,Empty
+public enum BallState{
+      Purple,
+      Green,
+      Empty
 }
 public void update(){
    boolean ballDetected = false;
