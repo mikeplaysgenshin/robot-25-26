@@ -59,6 +59,13 @@ public enum BallState{
       Green,
       Empty
 }
+public void intakeAction(boolean isRunning){
+    if(isRunning){
+      intake.setPower(1);        
+}else{
+      intake.setPower(0);
+    }
+}
 public void update(){
    boolean ballDetected = false;
 }
