@@ -59,7 +59,7 @@ public enum BallState{
       Green,
       Empty
 }
-}
+
 public void update(){
    boolean ballDetected = false;
 }
